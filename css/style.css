@@ -1,0 +1,631 @@
+
+:root {
+    /* Tipos de Fuente */
+    font-family: 'Poppins', sans-serif;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* Paleta de Colores*/
+    --primario:#0C1022;
+    --secundary: #323946;
+    --white: #FFF;
+    --red:#F06;
+    --blue:#3CF;
+    --pink:#e3608a;
+
+}
+
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+   background: var(--primario);
+   color: var(--white);
+}
+
+.header {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    pointer-events: none;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+}
+
+.navbar a {
+    font-size: 18px;
+    color:var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: 1s;
+}
+
+.navbar a.active,
+.navbar a:hover {
+    background: linear-gradient(45deg,var(--red),var(--blue));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.home-content {
+    max-width: 500px;
+    margin-left: -30px;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--red), var(--blue));
+    -webkit-background-clip: text; /* Esto es para navegadores Webkit como Chrome y Safari */
+    color: transparent; /* Hace que el texto sea transparente para mostrar el fondo degradado */
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p {
+    font-size: 16px;
+    text-align: justify;
+    margin: 20px 0 40px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+.btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 48px;
+    background: linear-gradient(45deg,var(--red),var(--blue));
+    border-radius: 40px;
+    font-size: 19px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 1.8s;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    inset: 0;
+    background: linear-gradient(45deg,var(--red),var(--blue));
+    background-size: 200%;
+    background-position: 0 0;
+    z-index: -1;
+    border-radius: 40px;
+    filter:blur(5px);
+    transition: .5s ease;
+
+}
+
+.btn:hover::before{
+    background-position: 100% 0;
+}
+
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    inset: 0;
+    background: linear-gradient(45deg,var(--red),var(--blue));
+    background-size: 200%;
+    background-position: 0 0;
+    z-index: -1;
+    border-radius: 40px;
+    background-size: 200%;
+
+}
+
+.btn:hover::after {
+    background-position: 100% 0;
+}
+
+.home-sci a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg,var(--red),var(--blue));
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--white);
+    text-decoration: none;
+    margin: 20px 0;
+    z-index: 1;
+
+}
+
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,var(--red),var(--blue));
+    border-radius: 50%;
+    z-index: -1;
+    transition: .5s ease;
+
+}
+
+.home-sci a:hover::before{
+    filter: blur(5px);
+}
+
+.home-sci a:nth-child(1){
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 2.1s;
+}
+
+.home-sci a:nth-child(2){
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 2.1s;
+}
+
+
+.home-sci a:nth-child(3){
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2.1s;
+}
+
+.home-sci a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--primario);
+    border-radius: 50%;
+    transform: scale(.88);
+    z-index: -1;
+    transition: .5s ease;
+
+}
+
+.home-sci a:hover::after{
+    transform: scale(0);
+}
+
+.home-img{
+    width: 410px;
+    height: 410px;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+.home-img .glowing-circle{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,var(--red),var(--blue));
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img .glowing-circle::after{
+    content: '';
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    background: var(--primario);
+    border-radius: 50%;
+}
+
+.glowing-circle span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,var(--red),var(--blue));
+    border-radius: 50%;
+    animation: circleRotate 5s linear infinite;
+}
+
+.glowing-circle span:nth-child(1){
+    filter: blur(10px);
+}
+
+.glowing-circle .image {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    /* background: red; */
+    border-radius: 50%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.image img{
+
+    position: absolute;
+    top: 30px;
+    transform: translateX(3.5%);
+    max-width: 350px;
+    object-fit: cover;
+
+}
+
+@keyframes slideTop {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes circleRotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.about {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 10% 0;
+    background: var(--secundary);
+}
+
+.about-img img{
+    width: 25vw;
+    height: 30vw;
+    margin-right: 200px;
+    border: 10px solid transparent;
+    border-image: linear-gradient(45deg, var(--red), var(--blue));
+    border-image-slice: 1;
+}
+
+.heading {
+    text-align: center;
+    font-size: 56px;
+
+}
+
+.heading span {
+    background: linear-gradient(to right, var(--red), var(--blue));
+    -webkit-background-clip: text; /* Esto es para navegadores Webkit como Chrome y Safari */
+    color: transparent; /* Hace que el texto sea transparente para mostrar el fondo degradado */
+}
+
+.about-content h2 {
+    text-align: left;
+    line-height: 1.2;
+}
+
+.about-content p {
+    font-size: 16px;
+    margin: 2rem 0 3rem;
+    text-align: justify;
+}
+
+.skills {
+    width: 100%;
+    height: 100vh;
+    padding: 100px 0;
+    background: var(--primario);
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.skills-box {
+    flex: 1;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background: var(--secundary);
+}
+
+.skills-layer {
+    border: 1px solid var(--red); /* Agrega un borde con el color primario */
+    padding: 20px;
+    border-radius: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skills-box h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    background: linear-gradient(to right, var(--red), var(--blue));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.skills-box p {
+    font-size: 16px;
+    margin: 0;
+    color: var(--white);
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.images img {
+    max-width: 80px;
+    height: auto;
+    margin: 0 10px;
+}
+
+.portfolio {
+   width: 100%;
+   background: var(--secundary);
+}
+
+.portfolio h2{
+    padding-top: 40px;
+}
+
+.portfolio-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+}
+
+.portfolio-container .portfolio-box{
+    position: relative;
+    width: 460px;
+    height: 280px;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--primario);
+    overflow: hidden;
+    display: flex;
+    margin: 0 20px 20px 0;
+}
+
+.portfolio-box img{
+    opacity: 0.5;
+    width: 100%;
+    transition: .5s ease;
+}
+
+.portfolio-box:hover img{
+    transform: scale(1.1);
+}
+
+.portfolio-box .portfolio-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,.1), var(--red));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+}
+
+.portfolio-box:hover .portfolio-layer {
+    transform: translateY(0);
+}
+
+.portfolio-layer h4 {
+    font-size: 3rem;
+    color: var(--primario);
+}
+.portfolio-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: var(--white);
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.portfolio a i{
+    font-size: 2rem;
+    color: var(--secundary);
+}
+
+.contact h2 {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--white);
+    background: var(--secundary);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.contact form .input-box input{
+    width: 49%;
+}
+
+.contact form textarea {
+    resize: none;
+    height: 200px;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1.2rem 9%;
+    background: var(--secundary);
+}
+
+.footer-text {
+    font-size: 1rem;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .6rem;
+    background: linear-gradient(to right, var(--red), var(--blue));
+    border-radius: .8rem;
+    text-decoration: none;
+
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--primario);
+}
+
+.footer-iconTop a i {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+
